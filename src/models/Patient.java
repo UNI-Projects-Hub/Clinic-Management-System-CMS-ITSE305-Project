@@ -2,8 +2,8 @@ package models;
 
 // Patient class represents a patient entity with basic contact information
 public class Patient {
-    private int id;          // Unique ID for each patient
-    private String name;     // Patient's full name
+    private final int id;          // Unique ID for each patient
+    private final String name;     // Patient's full name
     private String email;    // Patient's email address
     private String phone;    // Patient's phone number
     private String address;  // Patient's residential address

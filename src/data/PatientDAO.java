@@ -8,7 +8,7 @@ import models.Patient;
 // This class manages access to the patient data (CRUD operations)
 public class PatientDAO {
     // A mock database using a HashMap (key = patient ID, value = Patient object)
-    private Map<Integer, Patient> patients = new HashMap<>();
+    private final Map<Integer, Patient> patients = new HashMap<>();
 
     // Constructor - adds a sample patient for testing
     public PatientDAO() {
