@@ -11,7 +11,7 @@ public class AppointmentDAO {
     // Class definition for AppointmentDAO — responsible for handling appointment data operations.
 
     private List<Appointment> appointments = new ArrayList<>();
-    // A list that holds all Appointment objects currently stored in memory.
+    // A list that holds all Appointment objects currently stored in memory
 
     private int idCounter = 1;
     // A counter used to assign unique, incremental IDs to each new appointment.
