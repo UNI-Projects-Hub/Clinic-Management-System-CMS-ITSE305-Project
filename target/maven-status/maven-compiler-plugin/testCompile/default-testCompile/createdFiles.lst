@@ -1,0 +1,4 @@
+domain\MedicalRecordTest.class
+business\SanityTest.class
+business\MedicalRecordServiceTest.class
+domain\PatientTest.class

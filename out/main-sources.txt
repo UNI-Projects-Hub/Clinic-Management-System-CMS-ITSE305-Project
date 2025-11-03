@@ -1,0 +1,5 @@
+﻿C:\Users\User\iCloudDrive\UOB\2025-2026\First Semester\ITSE305 - Software Engineering Project\Project\Clinic-Management-System-CMS-ITSE305-Project\src\main\java\business\MedicalRecordService.java
+C:\Users\User\iCloudDrive\UOB\2025-2026\First Semester\ITSE305 - Software Engineering Project\Project\Clinic-Management-System-CMS-ITSE305-Project\src\main\java\data\MedicalRecordRepository.java
+C:\Users\User\iCloudDrive\UOB\2025-2026\First Semester\ITSE305 - Software Engineering Project\Project\Clinic-Management-System-CMS-ITSE305-Project\src\main\java\domain\MedicalRecord.java
+C:\Users\User\iCloudDrive\UOB\2025-2026\First Semester\ITSE305 - Software Engineering Project\Project\Clinic-Management-System-CMS-ITSE305-Project\src\main\java\domain\Patient.java
+C:\Users\User\iCloudDrive\UOB\2025-2026\First Semester\ITSE305 - Software Engineering Project\Project\Clinic-Management-System-CMS-ITSE305-Project\src\main\java\presentation\MedicalRecordUI.java
