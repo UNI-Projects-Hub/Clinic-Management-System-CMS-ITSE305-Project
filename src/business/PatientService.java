@@ -10,6 +10,9 @@ public class PatientService {
 
     // Constructor - inject DAO dependency
     public PatientService(PatientDAO patientDAO) {
+        if (patientDAO == null) {
+            throw new IllegalArgumentException("patientDAO must not be null");
+        }
         this.patientDAO = patientDAO;
     }
 
