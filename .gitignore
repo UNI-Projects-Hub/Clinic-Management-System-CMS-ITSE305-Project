@@ -1,0 +1,26 @@
+# Maven target
+target/
+
+# Randoop outputs and other generated test sources
+out/
+generated-tests/
+
+# Ignore compiled class files
+**/*.class
+
+# IDE files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Tools (if you prefer not to track tool jars)
+tools/
+
+# Node/npm (not used but safe)
+node_modules/
