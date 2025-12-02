@@ -9,7 +9,15 @@ import java.util.List;
 /** Business logic for "Doctor views medical records". */
 public class MedicalRecordService {
 
-    private final MedicalRecordRepository repo = new MedicalRecordRepository();
+    private final MedicalRecordRepository repo;
+
+    // Constructor injection for better testability and flexibility
+    public MedicalRecordService(MedicalRecordRepository repo) {
+        if (repo == null) {
+            throw new IllegalArgumentException("MedicalRecordRepository must not be null");
+        }
+        this.repo = repo;
+    }
 
     public Patient requirePatient(int patientId) {
         Patient p = repo.findPatient(patientId);
