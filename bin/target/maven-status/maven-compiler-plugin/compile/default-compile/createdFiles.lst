@@ -1,0 +1,5 @@
+domain\Patient.class
+business\MedicalRecordService.class
+data\MedicalRecordRepository.class
+presentation\MedicalRecordUI.class
+domain\MedicalRecord.class
