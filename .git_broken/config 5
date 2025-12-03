@@ -1,0 +1,21 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/UNI-Projects-Hub/Clinic-Management-System-CMS-ITSE305-Project.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+[branch "Mohamed-Mahdi---View-medical-Record-Use-Case"]
+	remote = origin
+	vscode-merge-base = origin/Mohamed-Mahdi---View-medical-Record-Use-Case
+	merge = refs/heads/Mohamed-Mahdi---View-medical-Record-Use-Case
+[branch "mohamed-mahdi"]
+	github-pr-base-branch = "UNI-Projects-Hub#Clinic-Management-System-CMS-ITSE305-Project#Mohamed-Mahdi---View-medical-Record-Use-Case"
+	vscode-merge-base = origin/Mohamed-Mahdi---View-medical-Record-Use-Case

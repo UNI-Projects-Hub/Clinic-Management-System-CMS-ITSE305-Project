@@ -1,0 +1,5 @@
+[remote "origin"]
+	url = https://github.com/UNI-Projects-Hub/Clinic-Management-System-CMS-ITSE305-Project.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "mohamed-mahdi"]
+	vscode-merge-base = origin/main
