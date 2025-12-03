@@ -1,9 +1,25 @@
-# Ignore IntelliJ IDEA project files
+# IntelliJ IDEA
 .idea/
 *.iml
 
-# Ignore build output
+# Build outputs
 out/
+target/
+bin/
 
-# Ignore compiled class files
+# Compiled Java files
 *.class
+
+# Randoop
+generated-tests/
+tools/
+
+# IDE / Editors
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
