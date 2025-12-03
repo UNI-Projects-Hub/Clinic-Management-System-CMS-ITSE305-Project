@@ -1,57 +1,71 @@
 package presentation;
 
 import java.util.Scanner;
+
 import business.PatientService;
 import data.PatientDAO;
 import models.Patient;
 
-// Presentation Layer (UI Layer)
-// Responsible for interacting with the user
 public class PatientUI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Create objects for DAO and Service
         PatientDAO patientDAO = new PatientDAO();
         PatientService service = new PatientService(patientDAO);
 
         System.out.println("=== Update Contact Information ===");
 
-        // Ask user for patient ID
-        System.out.print("Enter your patient ID: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        Patient patient = null;
+        int id = -1;
 
-        // Fetch patient data
-        Patient patient = service.getPatient(id);
+        // Loop until a valid patient is found
+        while (patient == null) {
+            System.out.print("Enter your patient ID: ");
+            String input = scanner.nextLine();
 
-        // If no patient found, exit
-        if (patient == null) {
-            System.out.println("Patient not found.");
-            scanner.close();
-            return;
+            try {
+                id = Integer.parseInt(input);
+                patient = service.getPatient(id).orElse(null);
+
+                if (patient == null) {
+                    System.out.println("Patient not found. Please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid ID. Please enter a numeric value.");
+            }
         }
 
         // Display current info
         System.out.println("\nCurrent Contact Info:");
         System.out.println(patient);
 
-        // Ask for new contact info
-        System.out.print("\nEnter new email: ");
-        String email = scanner.nextLine();
+        // Input loop for new contact info
+        String email, phone, address;
+        while (true) {
+            System.out.print("\nEnter new email: ");
+            email = scanner.nextLine();
+            System.out.print("Enter new phone: ");
+            phone = scanner.nextLine();
+            System.out.print("Enter new address: ");
+            address = scanner.nextLine();
 
-        System.out.print("Enter new phone: ");
-        String phone = scanner.nextLine();
+            if (email.isBlank() || phone.isBlank() || address.isBlank()) {
+                System.out.println("Fields cannot be empty. Please enter all values.");
+            } else {
+                break;
+            }
+        }
 
-        System.out.print("Enter new address: ");
-        String address = scanner.nextLine();
+
+
+        
 
         // Attempt update
         boolean success = service.updateContactInfo(id, email, phone, address);
 
-        // Show result
         if (success) {
             System.out.println("\n✅ Contact information updated successfully!");
-            System.out.println(service.getPatient(id));
+            System.out.println(service.getPatient(id).get());
         } else {
             System.out.println("\n❌ Failed to update contact information.");
         }

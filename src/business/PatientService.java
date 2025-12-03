@@ -1,14 +1,14 @@
 package business;
 
+import java.util.Optional;
+
 import data.PatientDAO;
 import models.Patient;
 
-// Service layer = business logic of the system
-// It interacts between UI and Data layers
 public class PatientService {
-    private final PatientDAO patientDAO; // DAO instance for data operations
 
-    // Constructor - inject DAO dependency
+    private final PatientDAO patientDAO;
+
     public PatientService(PatientDAO patientDAO) {
         if (patientDAO == null) {
             throw new IllegalArgumentException("patientDAO must not be null");
@@ -16,24 +16,40 @@ public class PatientService {
         this.patientDAO = patientDAO;
     }
 
-    // Get patient info by ID
-    public Patient getPatient(int id) {
-        return patientDAO.getPatientById(id);
+    // Return Optional instead of null
+    public Optional<Patient> getPatient(int id) {
+        return Optional.ofNullable(patientDAO.getPatientById(id));
     }
 
-    // Update patient contact info if patient exists
+    // Update contact info with validation + safe update handling
     public boolean updateContactInfo(int id, String email, String phone, String address) {
-        Patient patient = patientDAO.getPatientById(id);
-        if (patient == null) return false; // if patient not found
 
-        // Update patient data
+        Optional<Patient> optionalPatient = getPatient(id);
+        if (optionalPatient.isEmpty()) return false;
+
+        if (!isValidEmail(email) || !isValidPhone(phone) || !isValidAddress(address)) {
+            return false; // validation failed
+        }
+
+        Patient patient = optionalPatient.get();
         patient.setEmail(email);
         patient.setPhone(phone);
         patient.setAddress(address);
 
-        // Save updated data
-        patientDAO.updatePatient(patient);
-        return true;
+        // DAO update returns boolean so we know if it succeeded
+        return patientDAO.updatePatient(patient);
+    }
+
+    // ---- Basic validation helpers ----
+    private boolean isValidEmail(String email) {
+        return email != null && email.contains("@") && email.length() >= 5;
+    }
+
+    private boolean isValidPhone(String phone) {
+        return phone != null && phone.matches("\\+?[0-9]{7,15}");
+    }
+
+    private boolean isValidAddress(String address) {
+        return address != null && !address.isBlank();
     }
 }
-        
