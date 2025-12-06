@@ -1,0 +1,25 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Build outputs
+out/
+target/
+bin/
+
+# Compiled Java files
+*.class
+
+# Randoop
+generated-tests/
+tools/
+
+# IDE / Editors
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
