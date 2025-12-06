@@ -6,13 +6,8 @@
 import java.time.LocalDateTime;
 // Importing LocalDateTime for handling appointment date and time values.
 
-import org.junit.jupiter.api.AfterEach;
-// Imported but not used in this class — likely a leftover import from testing.
-// It can be safely removed if unused.
-
 public class AppointmentService {
     // Class definition for AppointmentService — responsible for managing appointment operations.
-
 
     private AppointmentDAO appointmentDAO;
     // Reference to the AppointmentDAO object used to store and retrieve appointment data.
