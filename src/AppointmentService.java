@@ -13,6 +13,7 @@ import org.junit.jupiter.api.AfterEach;
 public class AppointmentService {
     // Class definition for AppointmentService — responsible for managing appointment operations.
 
+
     private AppointmentDAO appointmentDAO;
     // Reference to the AppointmentDAO object used to store and retrieve appointment data.
 

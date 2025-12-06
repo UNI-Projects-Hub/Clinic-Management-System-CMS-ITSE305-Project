@@ -14,6 +14,7 @@ class AppointmentTest {
     void tearDown() {
     }
 
+
     @Test
     void getAppointmentId() {
     }

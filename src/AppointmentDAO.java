@@ -10,6 +10,7 @@ import java.util.List;
 public class AppointmentDAO {
     // Class definition for AppointmentDAO — responsible for handling appointment data operations.
 
+
     private List<Appointment> appointments = new ArrayList<>();
     // A list that holds all Appointment objects currently stored in memory
 

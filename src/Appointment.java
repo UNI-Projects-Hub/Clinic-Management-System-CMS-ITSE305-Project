@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class Appointment {
     // Class definition for Appointment. It represents a single appointment record.
 
+
     private int appointmentId;
     // Unique identifier for each appointment.
 

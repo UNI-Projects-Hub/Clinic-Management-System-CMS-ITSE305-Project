@@ -1,4 +1,4 @@
-package com.clinic.helloci;
+package main.java.com.clinic.helloci;
 
 public class HelloCI {
 
